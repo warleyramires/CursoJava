@@ -1,0 +1,31 @@
+# Arquivos de compilação e saída
+bin/
+target/
+
+# Arquivos de configuração do Eclipse
+.classpath
+.project
+
+# Arquivos de configuração do IntelliJ IDEA
+.idea/
+
+# Logs
+*.log
+
+# Arquivos temporários
+*.swp
+
+# Dependências do Maven
+/.mvn
+/maven-wrapper.jar
+mvnw
+mvnw.cmd
+
+# Arquivos de compilação
+*.class
+
+# Cache do JAR executável
+spring-configuration-metadata.json
+
+# Arquivos PDF
+*.pdf
