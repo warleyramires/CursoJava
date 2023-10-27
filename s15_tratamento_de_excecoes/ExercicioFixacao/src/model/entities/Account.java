@@ -1,5 +1,7 @@
 package model.entities;
 
+import model.exceptions.BusinessException;
+
 public class Account {
     private Integer number;
     private String holder;
@@ -45,12 +47,22 @@ public class Account {
         this.withdrawLimit = withdrawLimit;
     }
 
-    public void deposit(Double amout){
+    public void deposit(Double amount){
 
+            balance += amount;
+    }
+    public void withdraw(double amount) {
+        validateWithdraw(amount);
+        balance -= amount;
     }
 
-    public void withdraw(Double amout){
-        
+    public void validateWithdraw(Double amount){
+        if(amount > withdrawLimit){
+           throw new BusinessException("Erro de saque: A quantia excede o limite de saque");
+        }
+        if(amount > getBalance()){
+            throw new BusinessException("Erro de saque: Saldo insuficiente." );
+        }
     }
 
 }
